@@ -16,12 +16,12 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-list.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductListComponent implements  OnDestroy {
+export class ProductListComponent implements OnDestroy {
   pageTitle = 'Product List';
   errorMessage = '';
   categories;
 
-  products$ = this.productService.products$;
+  products$ = this.productService.productsWithCategory$;
   sub: Subscription;
 
   constructor(private productService: ProductService) {}
